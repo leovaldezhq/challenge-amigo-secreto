@@ -88,8 +88,11 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    display: flex;
+    gap: 20px;
     justify-content: center;
+    width: 100%;
+    max-width: 600px;
 }
 
 /* Estilos de entrada de texto */
@@ -122,6 +125,7 @@ button {
 }
 
 .button-add:hover {
+    color: #FFFFFF;
     background-color: #a1a1a1;
 }
 
@@ -142,21 +146,32 @@ ul {
     text-align: center;
 }
 
-/* Botão de sortear título */
+/* Botão de sortear título e reiniciar lista */
 .button-draw {
     display: flex;
+    flex: 1;
     align-items: center;
-    width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .button-draw img {
     margin-right: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+    transform: scale(1.04);
+}
+
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
